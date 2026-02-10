@@ -1,0 +1,45 @@
+.primaryButton {
+  border-radius: 20px;
+  padding: 6px 24px;
+  box-shadow: 5px 5px 10px 0px #cfd7e6, 5px 5px 20px 0px #dce6f5 inset;
+  font-size: 16px;
+}
+
+.navigationBarWrapper .tab {
+  padding: 0px 8px;
+}
+.navigationBarWrapper .arc {
+  background-size: contain;
+  background-image: url("../../assets/icons/sun.svg");
+  height: 24px;
+  width: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+  margin-left: 16px;
+}
+.navigationBarWrapper .arc:hover {
+  transform: rotate(45deg);
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  margin: unset;
+  min-height: 100vh;
+  background-color: #f7f7f2;
+}
+
+.dark body {
+  background-color: rgb(15, 23, 42);
+}
+
+button {
+  border: unset;
+  width: fit-content;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=app.css.map */
