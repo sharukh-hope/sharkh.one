@@ -1,8 +1,8 @@
-@import "./core/allCore";
-@import "./buttons/allButtons";
-@import "./typography/allTypography";
-@import "./pages/allPages";
-@import "./components/allComponents";
+@use "./core/colors";
+@use "./buttons/allButtons";
+@use "./typography/allTypography";
+@use "./pages/allPages";
+@use "./components/allComponents";
 
 html {
   display: flex;
@@ -11,14 +11,13 @@ html {
 body {
   margin: unset;
   min-height: 100vh;
-  background-color: #f7f7f2;
+  background-color: colors.$beige;
 }
 .dark body {
-  background-color: rgb(15 23 42);
+  background-color: colors.$oceanDeep;
 }
 
 button {
   border: unset;
-  width: fit-content;
   cursor: pointer;
 }

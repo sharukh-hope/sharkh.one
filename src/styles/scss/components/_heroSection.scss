@@ -1,0 +1,65 @@
+@use "../core/colors" as *;
+
+.HeroSectionWrapper {
+  .ActionToolTipWrapper {
+    .menuButton {
+      &:hover {
+        color: $orangeAccent;
+        .menuIcon {
+          background-color: $orangeAccent;
+        }
+      }
+      .menuIcon {
+        background-color: $slate500;
+        margin-right: 8px;
+      }
+      .iconClipboard {
+        mask-image: url("../../assets/icons/clipboard-light.svg");
+        mask-repeat: no-repeat;
+        mask-size: contain;
+      }
+      .iconSend {
+        mask-image: url("../../assets/icons/send-light.svg");
+        mask-repeat: no-repeat;
+        mask-size: contain;
+      }
+      .iconCheck {
+        mask-image: url("../../assets/icons/check-light.svg");
+        mask-repeat: no-repeat;
+        mask-size: contain;
+      }
+    }
+  }
+}
+.dark {
+  .HeroSectionWrapper {
+    .ActionToolTipWrapper {
+      .menuButton {
+        &:hover {
+          color: $teal;
+          .menuIcon {
+            background-color: $teal;
+          }
+        }
+        .menuIcon {
+          background-color: $slate400;
+        }
+        .iconClipboard {
+          mask-image: url("../../assets/icons/clipboard.svg");
+          mask-repeat: no-repeat;
+          mask-size: contain;
+        }
+        .iconSend {
+          mask-image: url("../../assets/icons/send.svg");
+          mask-repeat: no-repeat;
+          mask-size: contain;
+        }
+        .iconCheck {
+          mask-image: url("../../assets/icons/check.svg");
+          mask-repeat: no-repeat;
+          mask-size: contain;
+        }
+      }
+    }
+  }
+}

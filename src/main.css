@@ -4,6 +4,9 @@
 @theme {
   --spacing: 4px;
   --font-default: "Inter", sans-serif;
+  --color-orangeAccent: #f05d23;
+  --color-oceanDeep: #0f172a;
+  --color-beige: #f7f7f2;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

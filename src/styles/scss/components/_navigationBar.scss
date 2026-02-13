@@ -1,17 +1,41 @@
+@use "../core/colors" as *;
+
 .navigationBarWrapper {
-  .tab {
-    padding: 0px 8px;
-  }
   .arc {
     background-size: contain;
-    background-image: url("../../assets/icons/sun.svg");
+    // background-image: url("../../assets/icons/sun.svg");
     height: 24px;
     width: 24px;
     transition: 0.25s;
     cursor: pointer;
     margin-left: 16px;
-    &:hover {
-      transform: rotate(45deg);
-    }
   }
+}
+#center,
+#mask-rays,
+#mask-center {
+  transform-origin: center;
+  transition: transform 250ms ease-out;
+}
+#center {
+  stroke: $orangeAccent;
+  transform: rotate(-35deg) scale(0.8);
+  fill: transparent;
+  stroke-width: 2px;
+}
+#rays {
+  stroke: $orangeAccent;
+  stroke-width: 2px;
+}
+
+.dark #center {
+  stroke: transparent;
+  transform: rotate(-35deg) scale(1.5);
+  fill: oklch(85.2% 0.199 91.936);
+}
+.dark #mask-rays {
+  transform: scale(0.5);
+}
+.dark #mask-center {
+  transform: translateX(-18px);
 }

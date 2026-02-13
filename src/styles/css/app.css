@@ -5,20 +5,105 @@
   font-size: 16px;
 }
 
-.navigationBarWrapper .tab {
-  padding: 0px 8px;
-}
 .navigationBarWrapper .arc {
   background-size: contain;
-  background-image: url("../../assets/icons/sun.svg");
   height: 24px;
   width: 24px;
   transition: 0.25s;
   cursor: pointer;
   margin-left: 16px;
 }
-.navigationBarWrapper .arc:hover {
-  transform: rotate(45deg);
+
+#center,
+#mask-rays,
+#mask-center {
+  transform-origin: center;
+  transition: transform 250ms ease-out;
+}
+
+#center {
+  stroke: #f05d23;
+  transform: rotate(-35deg) scale(0.8);
+  fill: transparent;
+  stroke-width: 2px;
+}
+
+#rays {
+  stroke: #f05d23;
+  stroke-width: 2px;
+}
+
+.dark #center {
+  stroke: transparent;
+  transform: rotate(-35deg) scale(1.5);
+  fill: oklch(85.2% 0.199 91.936deg);
+}
+
+.dark #mask-rays {
+  transform: scale(0.5);
+}
+
+.dark #mask-center {
+  transform: translateX(-18px);
+}
+
+.ExperienceCardWrapper:hover .header {
+  color: #f05d23;
+}
+
+.dark .ExperienceCardWrapper:hover .header {
+  color: #46ecd5;
+}
+
+.HeroSectionWrapper .ActionToolTipWrapper .menuButton:hover {
+  color: #f05d23;
+}
+.HeroSectionWrapper .ActionToolTipWrapper .menuButton:hover .menuIcon {
+  background-color: #f05d23;
+}
+.HeroSectionWrapper .ActionToolTipWrapper .menuButton .menuIcon {
+  background-color: #62748e;
+  margin-right: 8px;
+}
+.HeroSectionWrapper .ActionToolTipWrapper .menuButton .iconClipboard {
+  mask-image: url("../../assets/icons/clipboard-light.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+.HeroSectionWrapper .ActionToolTipWrapper .menuButton .iconSend {
+  mask-image: url("../../assets/icons/send-light.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+.HeroSectionWrapper .ActionToolTipWrapper .menuButton .iconCheck {
+  mask-image: url("../../assets/icons/check-light.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.dark .HeroSectionWrapper .ActionToolTipWrapper .menuButton:hover {
+  color: #46ecd5;
+}
+.dark .HeroSectionWrapper .ActionToolTipWrapper .menuButton:hover .menuIcon {
+  background-color: #46ecd5;
+}
+.dark .HeroSectionWrapper .ActionToolTipWrapper .menuButton .menuIcon {
+  background-color: #90a1b9;
+}
+.dark .HeroSectionWrapper .ActionToolTipWrapper .menuButton .iconClipboard {
+  mask-image: url("../../assets/icons/clipboard.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+.dark .HeroSectionWrapper .ActionToolTipWrapper .menuButton .iconSend {
+  mask-image: url("../../assets/icons/send.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+.dark .HeroSectionWrapper .ActionToolTipWrapper .menuButton .iconCheck {
+  mask-image: url("../../assets/icons/check.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
 }
 
 html {
@@ -33,12 +118,11 @@ body {
 }
 
 .dark body {
-  background-color: rgb(15, 23, 42);
+  background-color: #0f172a;
 }
 
 button {
   border: unset;
-  width: fit-content;
   cursor: pointer;
 }
 

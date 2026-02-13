@@ -2,16 +2,17 @@ import { Pill } from "../common/Pill";
 
 // components/ExperienceCard.tsx
 interface ExperienceCardProps {
-  date: string;
+  subTitle?: string;
   title: string;
-  company: string;
+  company?: string;
   description: string;
   skills: string[];
   link?: string;
+  thumbnail?: string;
 }
 
 export const ExperienceCard = ({
-  date,
+  thumbnail,
   title,
   company,
   description,
@@ -20,33 +21,44 @@ export const ExperienceCard = ({
 }: ExperienceCardProps) => {
   const CardWrapper = link ? "a" : "div";
 
+  const renderThumbnail = () => {
+    if (!thumbnail) return null;
+    return (
+      <span className="min-w-40 p-2">
+        <img
+          className="h-fit w-40 rounded-xs"
+          src={thumbnail}
+          alt="project"
+        ></img>
+      </span>
+    );
+  };
   return (
     <CardWrapper
       href={link}
       target={link ? "_blank" : undefined}
       rel={link ? "noopener noreferrer" : undefined}
       className={`
-        group relative flex gap-10 p-6 min-w-140
-        transition-all sm:gap-8 md:gap-4 h-fit max-w-200
+        ExperienceCardWrapper
+        group relative grid grid-cols-[160px_1fr] gap-10 p-6 
+        transition-all h-fit max-w-200
         rounded-md
       dark:hover:bg-slate-800/50 hover:shadow-lg
       hover:bg-[rgb(228,230,195,.15)]
         ${link ? "cursor-pointer" : ""}
+        max-md:flex-col max-md:gap-1 max-md:min-w-full max-md:mb-2 max-md:flex
       `}
     >
       {/* Date */}
-      <header className="z-1 mb-2 mt-1 text-xs font-semibold uppercase text-slate-500 min-w-50">
-        {date}
-      </header>
+      <span className="max-md:hidden">{renderThumbnail()}</span>
 
       {/* Content */}
       <div className="z-2">
         <h3 className="font-medium text-slate-800 dark:text-slate-200">
           <div>
             {link ? (
-              <span className="inline-flex items-baseline font-medium leading-tight text-slate-800 dark:text-slate-200 dark:hover:text-teal-300 hover:text-[#F05D23]  focus-visible:text-teal-300 group/link text-base">
-                <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
-                <span className="flex flex-row">
+              <span className="inline-flex items-baseline font-medium leading-tight text-slate-800 dark:text-slate-200 dark:hover:text-teal-300 hover:text-[#F05D23] text-base">
+                <span className="header flex flex-row">
                   {title} · {company}
                   <svg
                     className="ml-1 h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-focus-visible:translate-x-1 group-focus-visible:-translate-y-1 motion-reduce:transition-none"
@@ -71,7 +83,13 @@ export const ExperienceCard = ({
           </div>
         </h3>
 
-        <p className="mt-2 text-sm text-slate-400 min-w-[100]">{description}</p>
+        <p
+          className="mt-2 text-sm text-slate-400 min-w-100 mb-3
+        max-md:min-w-[unset] max-md:flex max-sm:flex-col"
+        >
+          <span className="md:hidden">{renderThumbnail()}</span>
+          {description}
+        </p>
 
         {/* Skills */}
         {skills.length > 0 && (

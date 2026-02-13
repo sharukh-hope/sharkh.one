@@ -33,7 +33,7 @@ function App() {
         background: bg,
       }}
     >
-      <div className="max-w-[80%]">
+      <div className="max-w-[80%] max-lg:max-w-[unset] max-lg:px-10 max-md:px-0 max-md:max-w-screen">
         <BrowserRouter>
           <NavigationBar />
           <AppRouter />
