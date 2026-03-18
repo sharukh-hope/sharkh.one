@@ -1,7 +1,7 @@
-import { ExperienceCard } from "./components/ExperienceCard";
-import { HeroSection } from "./components/HeroSection";
-import { experiences } from "./constants/experiences";
-import { projects } from "./constants/projects";
+import { ExperienceCard } from "../components/ExperienceCard";
+import { HeroSection } from "../components/HeroSection";
+import { experiences } from "../constants/experiences";
+import { projects } from "../constants/projects";
 
 const Home = () => {
   const renderFooterLink = (link: string, text: string) => {

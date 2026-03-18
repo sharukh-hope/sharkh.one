@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ActionTooltip } from "../common/ActionToolTip";
+import { ChatWindow } from "../components/ChatWindow";
 
 const emailSubject =
   "Your portfolio sent me here with a default subject line yay!";
@@ -44,25 +45,8 @@ export const HeroSection = () => {
       },
     },
   ];
-
-  return (
-    <div
-      className="HeroSectionWrapper sticky dark:text-slate-200 text-[#261C15] top-22 flex flex-col max-w-95 min-h-[60vh] max-h-[80vh] justify-between
-    max-lg:relative max-lg:justify-start max-lg:gap-8 max-lg:top-[unset] max-lg:min-h-[unset] max-lg:max-w-[90vw]
-    max-md:px-6"
-    >
-      <div className="headerSection">
-        <h1 className="mb-2 text-4xl">Sharukh Babu</h1>
-        <h2 className="mb-6 font-mono min-w-110 max-sm:min-w-[unset]">
-          Frontend Engineer{" "}
-          <span className="dark:text-yellow-400 text-orangeAccent">|</span>{" "}
-          Fullstack Engineer [MERN]
-        </h2>
-        <p className="dark:text-slate-400 text-slate-500">
-          A creative developer building better experiences for the web, and
-          learning the art of living.
-        </p>
-      </div>
+  const renderSocialIcons = () => {
+    return (
       <div className="socials flex gap-5">
         <a
           href="https://github.com/sharukh-hope"
@@ -92,6 +76,32 @@ export const HeroSection = () => {
           menuClassName="dark:bg-oceanDeep bg-beige"
           menuItemClassName="hover:text-teal-400 dark:text-slate-400 text-slate-500 hover:bg-transparent"
         />
+      </div>
+    );
+  };
+
+  return (
+    <div
+      className="HeroSectionWrapper sticky dark:text-slate-200 text-[#261C15] top-22 flex flex-col max-w-95 min-h-[60vh] max-h-[80vh] justify-between
+    max-lg:relative max-lg:justify-start max-lg:gap-8 max-lg:top-[unset] max-lg:min-h-[unset] max-lg:max-w-[90vw]
+    max-md:px-6"
+    >
+      <div className="headerSection">
+        <h1 className="mb-2 text-4xl">Sharukh Babu</h1>
+        <h2 className="mb-6 font-mono min-w-110 max-sm:min-w-[unset]">
+          Frontend Engineer{" "}
+          <span className="dark:text-yellow-400 text-orangeAccent">|</span>{" "}
+          Fullstack Engineer [MERN]
+        </h2>
+        <p className="dark:text-slate-400 text-slate-500">
+          A creative developer building better experiences for the web, and
+          learning the art of living.
+        </p>
+      </div>
+      <div>
+        <ChatWindow />
+
+        {renderSocialIcons()}
       </div>
     </div>
   );
