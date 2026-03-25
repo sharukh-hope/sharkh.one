@@ -39,7 +39,7 @@ export const ChatWindow = () => {
       return (
         <div className="text-xs mb-2">
           <span className="text-greenAccent dark:text-yellow-400">
-            bot@one ~ %{" "}
+            dustyAI@one ~ %{" "}
           </span>
           {item.parts[0].text}
         </div>
@@ -56,7 +56,7 @@ export const ChatWindow = () => {
 
   return (
     <div
-      className="ChatWindowWrapper flex-col font-mono overflow-y-auto w-100 my-4"
+      className="ChatWindowWrapper flex-col font-mono overflow-y-auto w-100 my-4 max-h-[60vh] max-lg:max-h-[35vh]"
       ref={chatWindowRef}
     >
       {data.map((item, index) => {
@@ -65,7 +65,7 @@ export const ChatWindow = () => {
 
       {isLoading ? (
         <span className="text-greenAccent dark:text-yellow-300 text-xs">
-          bot@one ~ % <TerminalLoader showSpinner />
+          dustyAI@one ~ % <TerminalLoader showSpinner />
         </span>
       ) : (
         <TerminalInput />
