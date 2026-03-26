@@ -33,7 +33,7 @@ export const TerminalInput = () => {
   };
 
   return (
-    <div className="flex text-xs items-center flex-row bg-oceanDeep">
+    <div className="flex text-xs items-center flex-row">
       <span className="text-orangeAccent dark:text-teal-300 mr-1">
         you@one ~ %{" "}
       </span>
