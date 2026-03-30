@@ -8,4 +8,19 @@ export const projects = [
     skills: ["Next JS", "React", "SCSS", "Javascript", "Framer-Motion"],
     link: "https://juicy-brand.vercel.app",
   },
+  {
+    thumbnail: "/projectThumbnails/mySpace.jpg",
+    title: "This site",
+    company: "A personal project",
+    description:
+      "A portfolio that reflects how I think and build—simple, fast, and intentional. It showcases my work in React, full-stack development, and interactive UI, with a strong emphasis on clarity, performance, and user experience. A subtle touch of finesse comes through an AI agent, designed to help you explore and learn more about me.",
+    skills: [
+      "Next JS",
+      "React",
+      "Tailwind CSS",
+      "SCSS",
+      "Javascript",
+      "Gemini",
+    ],
+  },
 ];
