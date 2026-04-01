@@ -26,7 +26,7 @@ export const ExperienceCard = ({
     return (
       <span className="min-w-40 p-2">
         <img
-          className="h-fit w-40 rounded-xs"
+          className="h-auto object-cover w-40 rounded-xs"
           src={thumbnail}
           alt="project"
         ></img>
@@ -84,7 +84,7 @@ export const ExperienceCard = ({
         </h3>
 
         <p
-          className="mt-2 text-sm text-slate-400 min-w-100 mb-3
+          className="mt-2 text-sm text-slate-500 min-w-100 mb-3
         max-md:min-w-[unset] max-md:flex max-sm:flex-col"
         >
           <span className="md:hidden">{renderThumbnail()}</span>
